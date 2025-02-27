@@ -1,0 +1,25 @@
+/* Colores Principales (Identidad y Cultura del Candombe) */
+// Estos colores representan la esencia de la comparsa, su fuerza y pasión.
+$color-rojo-intenso: #d72638; // → Representa la energía, el fuego del templado y la pasión del candombe.
+$color-dorado-vibrante: #f4a200; // → Evoca los estandartes, el brillo de los trajes y la majestuosidad de las vedettes.
+$color-negro-profundo: #1b1b1b; // → La elegancia, la tradición y el color de los tambores en contraste con la luz.
+$color-blanco-puro: #ffffff; // → Representa la vestimenta, los estandartes y el balance en la composición.
+
+/* Colores Secundarios (Acentos y Detalles) */
+// Estos colores refuerzan la identidad y aportan dinamismo a la web.
+$color-azul-vibrante: #0072bb; // → Representa el cielo nocturno y el ritmo en movimiento.
+$color-verde-profundo: #2e7d32; // → Simboliza la conexión con la naturaleza y la historia afrodescendiente.
+
+/* Colores de la comparsa */
+// Colores que representan a Cuareim C1080
+$color-verde-cuareim: green;
+$color-blanco-cuareim: $color-blanco-puro;
+$color-narannja-cuareim: orange;
+
+/*
+    📌 Ejemplo de Aplicación en la Web
+    ✅ Fondo principal: Negro o un degradado entre negro y rojo oscuro.
+    ✅ Botones y llamados a la acción (CTA): Dorado vibrante con texto en negro o blanco.
+    ✅ Textos principales: Blanco o dorado (según el fondo).
+    ✅ Hover y efectos interactivos: Rojo o azul para contrastar.
+*/

@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "colors";
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Symbols+Outlined");
+
+html,
+body {
+  height: 100%;
+  background-color: $color-negro-profundo;
+}
+
+body {
+  margin: 0;
+  font-family: "Public Sans", Roboto, "Helvetica Neue", sans-serif;
+}
+
+@import "styles/index";
