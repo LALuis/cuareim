@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [TranslateModule, NavbarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'cuareim';
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['es', 'en', 'de', 'fr', 'pt']);
+    this.translate.setDefaultLang(this.translate.getBrowserLang() || 'es');
+  }
+
+  useLanguage(language: string): void {
+    this.translate.use(language);
+  }
 }
