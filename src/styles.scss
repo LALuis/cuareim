@@ -1,2 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import "tailwindcss";
+@import "../src/styles/index.scss";
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
