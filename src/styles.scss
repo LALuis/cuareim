@@ -1,7 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
 @import "../src/styles/index.scss";
 @import "../src/styles/media";
 @import "../src/styles/mixins";
+
+@theme {
+  --color-white: #fff;
+  --color-gold: #dfa305;
+  --color-purple: #3f3cbb;
+  --color-midnight: #121063;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #78dcca;
+}
 
 body,
 html {

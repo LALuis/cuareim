@@ -1,7 +1,109 @@
-<nav class="navbar">
-  <div class="button">Conoce Cuareim</div>
-  <div class="button">Tienda</div>
-  <div class="logo">CUAREIM 1080</div>
-  <div class="button">Educación</div>
-  <div class="button">Idioma</div>
-</nav>
+<header
+  class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/30 bg-black/60"
+>
+  <nav class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Barra principal -->
+    <div class="flex h-16 items-center justify-between">
+      <!-- Left cluster -->
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a routerLink="/conoce" class="hover:text-oro-300 text-gold/90"
+          >Conoce Cuareim</a
+        >
+        <a routerLink="/tienda" class="hover:text-oro-300 text-gold/90"
+          >Tienda</a
+        >
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        (click)="toggle()"
+        class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-gold/90 hover:bg-gold/10"
+        aria-label="Abrir menú"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Right cluster -->
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a routerLink="/educacion" class="hover:text-oro-300 text-gold/90"
+          >Educación</a
+        >
+        <!-- Idioma (placeholder) -->
+        <button
+          type="button"
+          class="inline-flex items-center gap-2 rounded-full border border-gold/15 px-3 py-1.5 text-gold/90 hover:bg-gold/10"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            class="h-4 w-4"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 2a10 10 0 100 20 10 10 0 000-20Zm7.7 9h-3.4a14.8 14.8 0 00-1.2-5A8.1 8.1 0 0119.7 11ZM8.9 11H5.3a8.1 8.1 0 014.6-5 14.8 14.8 0 00-1 5Zm0 2a13 13 0 001 5 8.1 8.1 0 01-4.6-5h3.6Zm6.2 0h3.6a8.1 8.1 0 01-4.6 5 13 13 0 001-5Zm-1.8 0h-2.6a12 12 0 01-.9 4.4 7.8 7.8 0 005 0A12 12 0 0113.3 13Zm0-2A12 12 0 0114.2 6a7.8 7.8 0 00-5 0 12 12 0 01.9 5h3.2Z"
+            />
+          </svg>
+          <span>Idioma</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Logo circular centrado que sobresale -->
+    <div
+      class="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 translate-y-8 md:translate-y-7"
+    >
+      <div
+        class="pointer-events-auto flex items-center justify-center rounded-full bg-black text-black shadow-[0_8px_30px_rgba(0,0,0,.25)] ring-4 ring-black/40 w-28 h-28 md:w-32 md:h-32"
+      >
+        <!-- Logo -->
+        <img
+          src="logo.svg"
+          alt="Logo Cuareim 1080"
+          class="w-20 md:w-24 h-auto drop-shadow-[0_2px_6px_rgba(0,0,0,.45)]"
+        />
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menú móvil desplegable -->
+  <div
+    class="md:hidden border-t border-gold/10 bg-black/80"
+    [ngClass]="{ hidden: !open() }"
+  >
+    <div class="mx-auto max-w-7xl px-4 py-4 grid gap-3 text-sm">
+      <a
+        routerLink="/conoce"
+        (click)="toggle()"
+        class="rounded-lg px-3 py-2 hover:bg-gold/10"
+        >Conoce Cuareim</a
+      >
+      <a
+        routerLink="/tienda"
+        (click)="toggle()"
+        class="rounded-lg px-3 py-2 hover:bg-gold/10"
+        >Tienda</a
+      >
+      <a
+        routerLink="/educacion"
+        (click)="toggle()"
+        class="rounded-lg px-3 py-2 hover:bg-gold/10"
+        >Educación</a
+      >
+      <button
+        (click)="toggle()"
+        class="inline-flex items-center justify-between rounded-lg px-3 py-2 hover:bg-gold/10"
+      >
+        <span>Idioma</span>
+        <span class="text-gold/60 text-xs">Próximamente</span>
+      </button>
+    </div>
+  </div>
+</header>

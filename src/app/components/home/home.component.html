@@ -1,3 +1,101 @@
-<main class="home">
-  <p>home works!</p>
-</main>
+<section class="relative min-h-[calc(100vh-5rem)] overflow-hidden">
+  <!-- Fondo con imagen -->
+  <div
+    class="absolute inset-0 bg-[url('assets/portada.jpg')] bg-cover bg-center"
+  ></div>
+
+  <!-- Filtro rojo por encima -->
+  <div class="absolute inset-0 bg-red-600/40 mix-blend-multiply"></div>
+  <!-- si lo querés más/menos intenso: bg-red-600/30 | /50, o quita mix-blend-multiply -->
+
+  <!-- Contenido -->
+  <div
+    class="relative z-10 flex items-center justify-center min-h-[calc(100vh-5rem)] px-4"
+  >
+    <div
+      class="max-w-sm w-full bg-neutral-900/90 backdrop-blur rounded-2xl shadow-lg overflow-hidden border border-neutral-800 transform transition duration-300 hover:shadow-2xl hover:scale-[1.02]"
+    >
+      <!-- Imagen del álbum -->
+      <img
+        src="embajador.jpg"
+        alt="Cuareim 1080 El Embajador"
+        class="w-full h-64 object-cover"
+        loading="lazy"
+      />
+
+      <!-- Contenido -->
+      <div class="p-6 flex flex-col items-center">
+        <h2 class="text-xl font-bold text-amber-400 mb-2 text-center">
+          Cuareim 1080 · El Embajador
+        </h2>
+        <p class="text-neutral-300 text-sm mb-6 text-center">
+          Disponible en todas las plataformas
+        </p>
+
+        <!-- Iconos de plataformas -->
+        <div class="flex space-x-6">
+          <!-- Spotify -->
+          <a
+            href="https://open.spotify.com/album/7jHygyKAu02AxXO1RqhbWL"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:scale-110 transition-transform"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8"
+              fill="white"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 
+                6.627 5.373 12 12 12s12-5.373 
+                12-12C24 5.373 18.627 0 12 
+                0zm5.484 17.339a.747.747 0 01-1.032.249c-2.83-1.736-6.392-2.125-10.598-1.15a.75.75 0 11-.334-1.463c4.61-1.05 8.537-.602 11.704 1.333a.75.75 0 01.26 1.031zm1.468-3.257a.937.937 0 01-1.294.314c-3.24-2.02-8.184-2.605-12.009-1.414a.938.938 0 01-.562-1.794c4.334-1.359 9.78-.707 13.492 1.699.45.28.593.869.373 1.195zm.126-3.401c-3.852-2.292-10.225-2.503-13.892-1.356a1.124 1.124 0 01-.662-2.145c4.204-1.296 11.239-1.048 15.626 1.61a1.124 1.124 0 01-1.072 1.891z"
+              />
+            </svg>
+          </a>
+
+          <!-- YouTube Music -->
+          <a
+            href="https://music.youtube.com/playlist?list=OLAK5uy_kcyrpDtFXD2-qPlsjT5n0bTAemrJ_N574&si=4ek-ajC_8a8iuBbt"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:scale-110 transition-transform"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8"
+              fill="white"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2a10 10 0 100 20 10 10 0 000-20zm-2 
+                14.5v-9l6 4.5-6 4.5z"
+              />
+            </svg>
+          </a>
+
+          <!-- Apple Music -->
+          <a
+            href="https://music.apple.com/mx/album/el-embajador/1822604035"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:scale-110 transition-transform"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8"
+              fill="white"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M352 16c-9 0-18 1-27 4L192 57c-20 6-32 23-32 44v246c-9-5-19-7-29-7-35 0-64 29-64 64s29 64 64 64 64-29 64-64V205l160-46v162c-9-5-19-7-29-7-35 0-64 29-64 64s29 64 64 64 64-29 64-64V48c0-18-9-29-17-32-6-2-13-3-21-3z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
