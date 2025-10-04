@@ -1,0 +1,30 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="logo">
+      <img src="assets/logo-footer.png" alt="Cuareim 1080" />
+    </div>
+
+    <nav class="footer-nav">
+      <a href="#conoce">{{ "MENU.ABOUT" | translate }}</a>
+      <a href="#merch">{{ "MENU.MERCH" | translate }}</a>
+      <a href="#contacto">{{ "MENU.CONTACT" | translate }}</a>
+    </nav>
+
+    <div class="social-media">
+      <a href="#"><img src="facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="instagram.png" alt="Instagram" /></a>
+    </div>
+
+    <div class="language-switcher">
+      <button (click)="useLanguage('es')">🇪🇸</button>
+      <button (click)="useLanguage('en')">🇬🇧</button>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Cuareim 1080 - {{ "FOOTER.RIGHTS" | translate }}</p>
+    <p class="quote">
+      <em>{{ "FOOTER.QUOTE" | translate }}</em>
+    </p>
+  </div>
+</footer>

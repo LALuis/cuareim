@@ -1,0 +1,72 @@
+@import "../../../styles/colors";
+
+$cuareim-red: #d72638;
+$cuareim-gold: #f4a200;
+$cuareim-black: #1b1b1b;
+$cuareim-white: #ffffff;
+
+.footer {
+  background-color: $cuareim-black;
+  color: $cuareim-white;
+  padding: 40px 20px;
+  font-family: "Public Sans", sans-serif;
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .logo img {
+    max-width: 160px;
+  }
+
+  .footer-nav a {
+    color: $cuareim-white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: $cuareim-gold;
+    }
+  }
+
+  .social-media a img {
+    width: 24px;
+    margin: 0 8px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .language-switcher button {
+    background: none;
+    border: none;
+    color: $cuareim-white;
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 14px;
+
+    .quote {
+      margin-top: 10px;
+      font-style: italic;
+      color: $cuareim-gold;
+    }
+  }
+}

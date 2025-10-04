@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../src/styles/index.scss";
+@import "../src/styles/media";
+@import "../src/styles/mixins";
 
 body,
 html {
@@ -7,4 +9,5 @@ html {
   padding: 0;
   height: 100%;
   font-family: "Roboto", sans-serif;
+  background-color: $color-negro-profundo;
 }
