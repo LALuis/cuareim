@@ -12,13 +12,13 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class NavbarComponent {
   @HostListener('window:scroll')
   onScroll() {
-    this.scrolled.set(window.scrollY > 6);
+    this.scrolled = window.scrollY > 30; // encoge logo y barra
   }
 
   isMenuOpen = false;
   open = signal(false);
   langOpen = false;
-  scrolled = signal(false);
+  scrolled = false;
 
   constructor(private translate: TranslateService) {}
 

@@ -1,4 +1,6 @@
-<section class="relative min-h-[calc(100vh-5rem)] overflow-hidden">
+<section
+  class="relative overflow-hidden -mt-[var(--nav-h)] pt-[var(--nav-h)] min-h-screen"
+>
   <!-- Fondo con imagen -->
   <div
     class="absolute inset-0 bg-[url('assets/portada.jpg')] bg-cover bg-center"
@@ -6,16 +8,14 @@
 
   <!-- Filtro rojo por encima -->
   <div class="absolute inset-0 bg-red-600/40 mix-blend-multiply"></div>
-  <!-- si lo querés más/menos intenso: bg-red-600/30 | /50, o quita mix-blend-multiply -->
 
   <!-- Contenido -->
   <div
     class="relative z-10 flex items-center justify-center min-h-[calc(100vh-5rem)] px-4"
   >
     <div
-      class="max-w-sm w-full bg-neutral-900/90 backdrop-blur rounded-2xl shadow-lg overflow-hidden border border-neutral-800 transform transition duration-300 hover:shadow-2xl hover:scale-[1.02]"
+      class="heartbeat will-change-transform max-w-sm w-full bg-neutral-900/90 backdrop-blur rounded-2xl shadow-lg overflow-hidden border border-neutral-800 transform transition duration-300 hover:shadow-2xl hover:scale-[1.02]"
     >
-      <!-- Imagen del álbum -->
       <img
         src="embajador.jpg"
         alt="Cuareim 1080 El Embajador"
@@ -23,7 +23,6 @@
         loading="lazy"
       />
 
-      <!-- Contenido -->
       <div class="p-6 flex flex-col items-center">
         <h2 class="text-xl font-bold text-amber-400 mb-2 text-center">
           Cuareim 1080 · El Embajador
@@ -32,7 +31,6 @@
           Disponible en todas las plataformas
         </p>
 
-        <!-- Iconos de plataformas -->
         <div class="flex space-x-6">
           <!-- Spotify -->
           <a
