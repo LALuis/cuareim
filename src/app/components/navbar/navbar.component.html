@@ -1,20 +1,26 @@
 <header
-  class="sticky top-0 z-50 transition-all duration-300 flex items-center"
+  class="sticky top-0 z-50 flex items-center transition-all duration-300"
   [ngClass]="{
     'h-24 bg-black/80': !scrolled,
-    'h-14 bg-black/60 backdrop-blur': scrolled
+    'h-14 bg-black/60 backdrop-blur': scrolled,
   }"
   [style.--nav-h.px]="scrolled ? 56 : 96"
 >
-  <nav
-    class="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center"
-  >
+  <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
     <!-- izquierda -->
-    <div class="hidden md:flex items-center gap-6 text-sm">
-      <a routerLink="/conoce" class="hover:text-oro-300 text-gold/90"
-        >Conoce Cuareim</a
+    <div class="hidden items-center gap-6 text-sm md:flex">
+      <a
+        routerLink="/conoce"
+        class="hover:text-oro-300 text-gold/90"
       >
-      <a routerLink="/tienda" class="hover:text-oro-300 text-gold/90">Tienda</a>
+        Conoce Cuareim
+      </a>
+      <a
+        routerLink="/tienda"
+        class="hover:text-oro-300 text-gold/90"
+      >
+        Tienda
+      </a>
     </div>
 
     <!-- logo -->
@@ -22,19 +28,22 @@
       <img
         src="logo_cuareim.svg"
         alt="Logo Cuareim 1080"
-        [ngClass]="scrolled ? 'w-10 h-10' : 'w-20 h-20'"
+        [ngClass]="scrolled ? 'h-10 w-10' : 'h-20 w-20'"
         class="transition-all duration-300"
       />
     </div>
 
     <!-- derecha -->
-    <div class="hidden md:flex items-center gap-6 text-sm">
-      <a routerLink="/educacion" class="hover:text-oro-300 text-gold/90"
-        >Educación</a
+    <div class="hidden items-center gap-6 text-sm md:flex">
+      <a
+        routerLink="/educacion"
+        class="hover:text-oro-300 text-gold/90"
       >
+        Educación
+      </a>
       <button
         type="button"
-        class="inline-flex items-center gap-2 rounded-full border border-gold/15 px-3 py-1.5 text-gold/90 hover:bg-gold/10"
+        class="border-gold/15 text-gold/90 hover:bg-gold/10 inline-flex items-center gap-2 rounded-full border px-3 py-1.5"
       >
         <svg
           viewBox="0 0 24 24"

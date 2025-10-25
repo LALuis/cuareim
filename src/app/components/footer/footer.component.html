@@ -5,24 +5,22 @@
   ></div>
 
   <!-- Cuerpo del footer -->
-  <div class="bg-black/80 backdrop-blur border-t border-white/10">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+  <div class="border-t border-white/10 bg-black/80 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
         <!-- Brand -->
         <div class="md:col-span-4">
           <div class="flex items-center gap-4">
             <img
               src="logo_cuareim.svg"
               alt="Cuareim 1080"
-              class="w-30 h-30 shadow-[0_6px_24px_rgba(0,0,0,.45)]"
+              class="h-30 w-30 shadow-[0_6px_24px_rgba(0,0,0,.45)]"
               loading="lazy"
             />
             <div>
-              <h3 class="text-amber-400 font-semibold tracking-wide">
-                Cuareim 1080
-              </h3>
-              <p class="text-neutral-300/80 text-sm">
-                {{ "FOOTER.TAGLINE" | translate : {} : "fallback" }}
+              <h3 class="font-semibold tracking-wide text-amber-400">Cuareim 1080</h3>
+              <p class="text-sm text-neutral-300/80">
+                {{ 'FOOTER.TAGLINE' | translate: {} : 'fallback' }}
               </p>
             </div>
           </div>
@@ -30,37 +28,35 @@
 
         <!-- Navegación -->
         <nav class="md:col-span-4">
-          <h4
-            class="text-neutral-200/80 text-sm mb-3 uppercase tracking-widest"
-          >
-            {{ "FOOTER.NAV" | translate : {} : "fallback" }}
+          <h4 class="mb-3 text-sm tracking-widest text-neutral-200/80 uppercase">
+            {{ 'FOOTER.NAV' | translate: {} : 'fallback' }}
           </h4>
           <ul class="space-y-2 text-[15px]">
             <li>
               <a
                 href="#conoce"
-                class="inline-flex items-center gap-2 text-neutral-200 hover:text-amber-300 transition"
+                class="inline-flex items-center gap-2 text-neutral-200 transition hover:text-amber-300"
               >
                 <span class="h-1.5 w-1.5 rounded-full bg-amber-400/70"></span>
-                {{ "MENU.ABOUT" | translate }}
+                {{ 'MENU.ABOUT' | translate }}
               </a>
             </li>
             <li>
               <a
                 href="#merch"
-                class="inline-flex items-center gap-2 text-neutral-200 hover:text-amber-300 transition"
+                class="inline-flex items-center gap-2 text-neutral-200 transition hover:text-amber-300"
               >
                 <span class="h-1.5 w-1.5 rounded-full bg-amber-400/70"></span>
-                {{ "MENU.MERCH" | translate }}
+                {{ 'MENU.MERCH' | translate }}
               </a>
             </li>
             <li>
               <a
                 href="#contacto"
-                class="inline-flex items-center gap-2 text-neutral-200 hover:text-amber-300 transition"
+                class="inline-flex items-center gap-2 text-neutral-200 transition hover:text-amber-300"
               >
                 <span class="h-1.5 w-1.5 rounded-full bg-amber-400/70"></span>
-                {{ "MENU.CONTACT" | translate }}
+                {{ 'MENU.CONTACT' | translate }}
               </a>
             </li>
           </ul>
@@ -68,34 +64,32 @@
 
         <!-- Redes + Idioma -->
         <div class="md:col-span-4">
-          <h4
-            class="text-neutral-200/80 text-sm mb-3 uppercase tracking-widest"
-          >
-            {{ "FOOTER.CONNECT" | translate : {} : "fallback" }}
+          <h4 class="mb-3 text-sm tracking-widest text-neutral-200/80 uppercase">
+            {{ 'FOOTER.CONNECT' | translate: {} : 'fallback' }}
           </h4>
 
           <!-- Social chips -->
-          <div class="flex items-center gap-3 mb-5">
+          <div class="mb-5 flex items-center gap-3">
             <!-- Usa tus PNG actuales -->
             <a
               href="#"
-              class="group grid place-items-center w-11 h-11 rounded-full bg-neutral-900/70 ring-1 ring-white/10 hover:ring-amber-400/60 transition"
+              class="group grid h-11 w-11 place-items-center rounded-full bg-neutral-900/70 ring-1 ring-white/10 transition hover:ring-amber-400/60"
             >
               <img
                 src="facebook.png"
                 alt="Facebook"
-                class="w-5 h-5 opacity-90 group-hover:opacity-100"
+                class="h-5 w-5 opacity-90 group-hover:opacity-100"
               />
               <span class="sr-only">Facebook</span>
             </a>
             <a
               href="#"
-              class="group grid place-items-center w-11 h-11 rounded-full bg-neutral-900/70 ring-1 ring-white/10 hover:ring-amber-400/60 transition"
+              class="group grid h-11 w-11 place-items-center rounded-full bg-neutral-900/70 ring-1 ring-white/10 transition hover:ring-amber-400/60"
             >
               <img
                 src="instagram.png"
                 alt="Instagram"
-                class="w-5 h-5 opacity-90 group-hover:opacity-100"
+                class="h-5 w-5 opacity-90 group-hover:opacity-100"
               />
               <span class="sr-only">Instagram</span>
             </a>
@@ -106,16 +100,18 @@
             <button
               type="button"
               (click)="useLanguage('es')"
-              class="px-3 py-1.5 rounded-full border border-white/10 bg-neutral-900/70 text-neutral-100 hover:text-amber-300 hover:border-amber-300/60 transition"
+              class="rounded-full border border-white/10 bg-neutral-900/70 px-3 py-1.5 text-neutral-100 transition hover:border-amber-300/60 hover:text-amber-300"
             >
-              🇪🇸 <span class="ml-1 text-sm">ES</span>
+              🇪🇸
+              <span class="ml-1 text-sm">ES</span>
             </button>
             <button
               type="button"
               (click)="useLanguage('en')"
-              class="px-3 py-1.5 rounded-full border border-white/10 bg-neutral-900/70 text-neutral-100 hover:text-amber-300 hover:border-amber-300/60 transition"
+              class="rounded-full border border-white/10 bg-neutral-900/70 px-3 py-1.5 text-neutral-100 transition hover:border-amber-300/60 hover:text-amber-300"
             >
-              🇬🇧 <span class="ml-1 text-sm">EN</span>
+              🇬🇧
+              <span class="ml-1 text-sm">EN</span>
             </button>
           </div>
         </div>
@@ -125,15 +121,18 @@
       <div class="mt-10 border-t border-white/10"></div>
 
       <!-- Bottom -->
-      <div
-        class="py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
-      >
-        <p class="text-neutral-400 text-sm">
-          © 2025 Cuareim 1080 — {{ "FOOTER.RIGHTS" | translate }}
+      <div class="flex flex-col gap-4 py-6 md:flex-row md:items-center md:justify-between">
+        <p class="text-sm text-neutral-400">
+          © 2025 Cuareim 1080 — {{ 'FOOTER.RIGHTS' | translate }}
         </p>
-        <p class="text-neutral-300/80 text-sm italic text-center md:text-right">
-          {{ "FOOTER.QUOTE" | translate }}
-          <img src="logo_lucho.svg" width="48" height="48" alt="HolaLucho" />
+        <p class="text-center text-sm text-neutral-300/80 italic md:text-right">
+          {{ 'FOOTER.QUOTE' | translate }}
+          <img
+            src="logo_lucho.svg"
+            width="48"
+            height="48"
+            alt="HolaLucho"
+          />
         </p>
       </div>
     </div>
