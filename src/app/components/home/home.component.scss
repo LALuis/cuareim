@@ -1,43 +1,488 @@
-/* Doble pulso sutil */
-@keyframes heartbeat {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+/* =================== Variables =================== */
+$black: #0b0b0b;
+$white: #ffffff;
+$neutral-900: #171717;
+$neutral-800: #262626;
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$emerald-500: #10b981;
+$emerald-600: #059669;
+$emerald-700: #047857;
+$gold: #f4c15d;
+
+/* Breakpoints */
+$bp-sm: 640px;
+$bp-lg: 1024px;
+
+/* Helpers */
+@mixin container() {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 1280px; // ~7xl
+  @media (min-width: $bp-sm) {
+    padding-inline: 1.5rem;
   }
-  10% {
-    transform: scale(1.035);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+  @media (min-width: $bp-lg) {
+    padding-inline: 2rem;
   }
-  20% {
-    transform: scale(0.995);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* =================== Base =================== */
+.section {
+  background: $black;
+  padding-block: 4rem;
+
+  &--dark {
+    background: $black;
+    color: $white;
   }
-  30% {
-    transform: scale(1.06);
-    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.34);
+
+  .section__header {
+    text-align: center;
+    margin-bottom: 3.5rem;
   }
-  45% {
-    transform: scale(1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  .section__title {
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 0.015em;
+    font-size: clamp(1.875rem, 1.2rem + 2vw, 2.5rem);
+    margin-bottom: 2.5rem;
+
+    &--gold {
+      color: $gold;
+    }
   }
+
+  .section__subtitle {
+    color: rgba($white, 0.85);
+    font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .section__cta {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.container {
+  @include container();
+}
+
+/* =================== Hero =================== */
+.hero {
+  position: relative;
+  margin-top: calc(-1 * var(--nav-h));
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+  overflow: hidden;
+  background: $black;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.9);
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(220, 38, 38, 0.4); /* rojo 600 /40 */
+    mix-blend-mode: multiply;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 1rem;
+  }
+}
+
+.hero-card {
+  width: 100%;
+  max-width: 24rem;
+  border-radius: 1rem;
+  background: rgba($neutral-900, 0.9);
+  border: 1px solid $neutral-800;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  backdrop-filter: blur(6px);
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  &__img {
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__body {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0 0 0.5rem;
+    color: $gold;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    margin: 0 0 1.5rem;
+    color: rgba($white, 0.8);
+    font-size: 0.9rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+  }
+}
+
+.icon-link {
+  display: inline-flex;
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+  .icon {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+  }
+}
+
+/* =================== Grid 12 (layout) =================== */
+.grid-12 {
+  display: grid;
+  gap: 2rem;
+
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: repeat(12, 1fr);
+    align-items: stretch;
+  }
+
+  &__col {
+    &--5 {
+      @media (min-width: $bp-lg) {
+        grid-column: span 5;
+      }
+    }
+    &--7 {
+      @media (min-width: $bp-lg) {
+        grid-column: span 7;
+      }
+    }
+  }
+}
+
+/* =================== Cards / Media =================== */
+.card {
+  position: relative;
+
+  &__media {
+    overflow: hidden;
+    border-radius: 1rem;
+    background: $gray-100;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+
+    .card:hover & {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* Aspect ratios */
+.ratio {
+  position: relative;
+  width: 100%;
+  &--4x3 {
+    padding-top: calc(3 / 4 * 100%); // 75%
+  }
+  > * {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+/* Visual ring sutil opcional */
+.ring {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* =================== Tipografía / Lists =================== */
+.h3 {
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: $white;
+
+  &--gold {
+    color: $gold;
+  }
+}
+
+.paragraph {
+  color: $white;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: grid;
+  gap: 0.75rem;
+
+  &__item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    color: $white;
+  }
+}
+
+.dot {
+  margin-top: 0.25rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  flex: 0 0 auto;
+
+  &--emerald {
+    background: $emerald-500;
+  }
+}
+
+/* =================== Badges =================== */
+.badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $white;
+  backdrop-filter: blur(4px);
+
+  &--dark {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  &--primary {
+    background: rgba($emerald-600, 0.9);
+  }
+  &--emerald {
+    background: rgba($emerald-700, 0.9);
+  }
+}
+
+/* =================== CTAs =================== */
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn {
+  --ring-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.05s ease;
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &--lg {
+    padding: 0.9rem 1.5rem;
+  }
+
+  &--primary {
+    background: $emerald-600;
+    color: $white;
+    border-color: transparent;
+
+    &:hover {
+      background: darken($emerald-600, 6%);
+      box-shadow: 0 8px 22px rgba($emerald-600, 0.5);
+    }
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba($emerald-600, 0.75);
+    }
+  }
+
+  &--outline {
+    color: $white;
+    border-color: $gray-300;
+
+    &:hover {
+      background: rgba($white, 0.06);
+    }
+  }
+
+  &--ghost {
+    color: #111827; // gris muy oscuro para botones sobre tarjeta blanca
+    border-color: $gray-300;
+
+    &:hover {
+      background: $gray-50;
+    }
+  }
+}
+
+/* =================== Product grid =================== */
+.product-grid {
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: $bp-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: $bp-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.product {
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  }
+
+  &__media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    margin: 0.75rem;
+    img {
+      display: block;
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .product:hover & img {
+      transform: scale(1.05);
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    border-radius: 999px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $white;
+  }
+
+  &__body {
+    padding: 1rem 0.75rem 1.25rem;
+  }
+
+  &__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+    color: #111827;
+  }
+
+  &__desc {
+    color: #4b5563;
+    font-size: 0.9rem;
+    margin: 0 0 0.75rem;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #111827;
+  }
+}
+
+/* =================== Animaciones =================== */
+@keyframes heartbeat-kf {
+  0%,
   100% {
     transform: scale(1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  }
+  15% {
+    transform: scale(1.015);
+  }
+  30% {
+    transform: scale(0.995);
+  }
+  45% {
+    transform: scale(1.01);
   }
 }
 
 .heartbeat {
-  animation: heartbeat 2.2s ease-in-out infinite;
-}
-
-/* Pausa el latido al pasar el mouse (para no competir con el hover:scale) */
-.heartbeat:hover {
-  animation-play-state: paused;
-}
-
-/* Respeta accesibilidad: si el usuario prefiere menos movimiento, no animar */
-@media (prefers-reduced-motion: reduce) {
-  .heartbeat {
-    animation: none;
-  }
+  will-change: transform;
+  animation: heartbeat-kf 2.8s ease-in-out infinite;
 }

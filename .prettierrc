@@ -8,7 +8,6 @@
   "bracketSpacing": true,
   "arrowParens": "always",
   "endOfLine": "lf",
-  "plugins": ["prettier-plugin-tailwindcss", "@trivago/prettier-plugin-sort-imports"],
   "htmlWhitespaceSensitivity": "ignore",
   "bracketSameLine": false,
   "singleAttributePerLine": true,
@@ -20,16 +19,6 @@
         "singleAttributePerLine": true
       }
     }
-  ],
-  "importOrder": [
-    "^@angular/(.*)$",
-    "^rxjs",
-    "",
-    "^@app/(.*)$",
-    "^@core/(.*)$",
-    "^@shared/(.*)$",
-    "",
-    "^[./]"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true

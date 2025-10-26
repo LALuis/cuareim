@@ -1,41 +1,56 @@
-<section class="relative -mt-[var(--nav-h)] min-h-screen overflow-hidden pt-[var(--nav-h)]">
-  <!-- Fondo con imagen -->
-  <div class="absolute inset-0 bg-[url('assets/portada.jpg')] bg-cover bg-center"></div>
+<!-- ====================== HERO ====================== -->
+<section
+  class="hero"
+  style="--nav-h: 5rem"
+>
+  <!-- Fondo -->
+  <div
+    class="hero__bg"
+    style="background-image: url('assets/portada.jpg')"
+    aria-hidden="true"
+  ></div>
 
-  <!-- Filtro rojo por encima -->
-  <div class="absolute inset-0 bg-red-600/40 mix-blend-multiply"></div>
+  <!-- Filtro rojo -->
+  <div
+    class="hero__overlay"
+    aria-hidden="true"
+  ></div>
 
   <!-- Contenido -->
-  <div class="relative z-10 flex min-h-[calc(100vh-5rem)] items-center justify-center px-4">
-    <div
-      class="heartbeat w-full max-w-sm transform overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/90 shadow-lg backdrop-blur transition duration-300 will-change-transform hover:scale-[1.02] hover:shadow-2xl"
-    >
+  <div class="hero__content">
+    <div class="hero-card heartbeat">
       <img
         src="embajador.jpg"
         alt="Cuareim 1080 El Embajador"
-        class="h-64 w-full object-cover"
+        class="hero-card__img"
         loading="lazy"
       />
 
-      <div class="flex flex-col items-center p-6">
-        <h2 class="mb-2 text-center text-xl font-bold text-amber-400">
-          Cuareim 1080 · El Embajador
-        </h2>
-        <p class="mb-6 text-center text-sm text-neutral-300">Disponible en todas las plataformas</p>
+      <div class="hero-card__body">
+        <app-reveal
+          [x]="0"
+          [y]="0"
+          [blur]="2"
+          timing="500ms ease-out"
+        >
+          <h2 class="hero-card__title">Cuareim 1080 · El Embajador</h2>
+        </app-reveal>
+        <p class="hero-card__subtitle">Disponible en todas las plataformas</p>
 
-        <div class="flex space-x-6">
+        <div class="hero-card__actions">
           <!-- Spotify -->
           <a
+            class="icon-link"
             href="https://open.spotify.com/album/7jHygyKAu02AxXO1RqhbWL"
             target="_blank"
             rel="noopener noreferrer"
-            class="transition-transform hover:scale-110"
+            aria-label="Abrir en Spotify"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-8 w-8"
-              fill="white"
+              class="icon"
               viewBox="0 0 24 24"
+              fill="white"
             >
               <path
                 d="M12 0C5.373 0 0 5.373 0 12c0 
@@ -48,36 +63,35 @@
 
           <!-- YouTube Music -->
           <a
+            class="icon-link"
             href="https://music.youtube.com/playlist?list=OLAK5uy_kcyrpDtFXD2-qPlsjT5n0bTAemrJ_N574&si=4ek-ajC_8a8iuBbt"
             target="_blank"
             rel="noopener noreferrer"
-            class="transition-transform hover:scale-110"
+            aria-label="Abrir en YouTube Music"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-8 w-8"
-              fill="white"
+              class="icon"
               viewBox="0 0 24 24"
+              fill="white"
             >
-              <path
-                d="M12 2a10 10 0 100 20 10 10 0 000-20zm-2 
-                14.5v-9l6 4.5-6 4.5z"
-              />
+              <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-2 14.5v-9l6 4.5-6 4.5z" />
             </svg>
           </a>
 
           <!-- Apple Music -->
           <a
+            class="icon-link"
             href="https://music.apple.com/mx/album/el-embajador/1822604035"
             target="_blank"
             rel="noopener noreferrer"
-            class="transition-transform hover:scale-110"
+            aria-label="Abrir en Apple Music"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-8 w-8"
-              fill="white"
+              class="icon"
               viewBox="0 0 512 512"
+              fill="white"
             >
               <path
                 d="M352 16c-9 0-18 1-27 4L192 57c-20 6-32 23-32 44v246c-9-5-19-7-29-7-35 0-64 29-64 64s29 64 64 64 64-29 64-64V205l160-46v162c-9-5-19-7-29-7-35 0-64 29-64 64s29 64 64 64 64-29 64-64V48c0-18-9-29-17-32-6-2-13-3-21-3z"
@@ -86,6 +100,264 @@
           </a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CONOCÉ CUAREIM ====================== -->
+<section
+  id="cuareim"
+  class="section section--dark"
+>
+  <div class="container">
+    <h2 class="section__title section__title--gold">Conocé Cuareim</h2>
+
+    <div class="grid-12">
+      <!-- Izquierda -->
+      <div class="grid-12__col grid-12__col--5">
+        <article class="card">
+          <div class="ratio ratio--4x3 card__media">
+            <img
+              src="gramilla.jpg"
+              alt="Imagen representativa de Cuareim C1080"
+              loading="lazy"
+              class="card__img"
+            />
+          </div>
+
+          <div class="badge badge--dark">Llamadas 2024</div>
+          <div class="ring"></div>
+        </article>
+      </div>
+
+      <!-- Derecha -->
+      <div class="grid-12__col grid-12__col--7">
+        <h3 class="h3 h3--gold">Ritmo, historia y comunidad</h3>
+
+        <p class="paragraph">
+          Sentí el latido del candombe y descubrí la energía de una comparsa con tradición. Ensayos
+          abiertos, toques, y una comunidad que vibra al unísono.
+        </p>
+
+        <ul class="bullets">
+          <li class="bullets__item">
+            <span class="dot dot--emerald"></span>
+            <span>Ensayos y presentaciones imperdibles.</span>
+          </li>
+          <li class="bullets__item">
+            <span class="dot dot--emerald"></span>
+            <span>Talleres para conocer el candombe desde adentro.</span>
+          </li>
+          <li class="bullets__item">
+            <span class="dot dot--emerald"></span>
+            <span>Comunidad que late al ritmo de los tambores.</span>
+          </li>
+        </ul>
+
+        <div class="cta-row">
+          <a
+            href="#experiencia"
+            class="btn btn--primary"
+          >
+            Descubrí la experiencia
+          </a>
+          <a
+            href="#galeria"
+            class="btn btn--outline"
+          >
+            Ver galería
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== EDUCACIÓN ====================== -->
+<section
+  id="educacion"
+  class="section section--dark"
+>
+  <div class="container">
+    <h2 class="section__title section__title--gold">Educación y Cultura</h2>
+
+    <div class="grid-12">
+      <!-- Izquierda -->
+      <div class="grid-12__col grid-12__col--5">
+        <article class="card">
+          <div class="ratio ratio--4x3 card__media">
+            <img
+              src="educacion.png"
+              alt="Taller educativo de candombe en Cuareim"
+              loading="lazy"
+              class="card__img"
+            />
+          </div>
+          <div class="badge badge--emerald">Formación abierta</div>
+        </article>
+      </div>
+
+      <!-- Derecha -->
+      <div class="grid-12__col grid-12__col--7">
+        <h3 class="h3 h3--gold">Transmitiendo el legado</h3>
+
+        <p class="paragraph">
+          A través de nuestros talleres y charlas, compartimos la esencia del candombe, su historia,
+          y su valor como patrimonio cultural del Uruguay. Promovemos el aprendizaje vivencial y el
+          respeto por nuestras raíces afrodescendientes.
+        </p>
+
+        <ul class="bullets">
+          <li class="bullets__item">
+            <span class="dot dot--emerald"></span>
+            <span>Talleres de tambor y ritmo para todas las edades.</span>
+          </li>
+          <li class="bullets__item">
+            <span class="dot dot--emerald"></span>
+            <span>Espacios educativos sobre identidad y cultura afrouruguaya.</span>
+          </li>
+          <li class="bullets__item">
+            <span class="dot dot--emerald"></span>
+            <span>Actividades en escuelas, liceos y centros comunitarios.</span>
+          </li>
+        </ul>
+
+        <div class="cta-row">
+          <a
+            href="#talleres"
+            class="btn btn--primary"
+          >
+            Ver talleres
+          </a>
+          <a
+            href="#agenda"
+            class="btn btn--outline"
+          >
+            Próximas actividades
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== TIENDA ====================== -->
+<section
+  id="shop-preview"
+  class="section section--dark"
+>
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title section__title--gold">Tienda Cuareim</h2>
+      <p class="section__subtitle">
+        Llevate el ritmo a casa — merchandising oficial y productos exclusivos.
+      </p>
+    </div>
+
+    <div class="product-grid">
+      <!-- CARD -->
+      <article class="product">
+        <div class="product__media">
+          <img
+            src="remera.svg"
+            alt="Camiseta oficial Cuareim"
+            loading="lazy"
+          />
+          <span class="badge badge--primary product__badge">Nuevo</span>
+        </div>
+        <div class="product__body">
+          <h3 class="product__title">Camiseta Oficial</h3>
+          <p class="product__desc">Edición 2025 — dry fit.</p>
+          <div class="product__footer">
+            <span class="product__price">$ 1.490</span>
+            <a
+              href="#producto/camiseta"
+              class="btn btn--ghost"
+            >
+              Ver producto
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product">
+        <div class="product__media">
+          <img
+            src="gorra.svg"
+            alt="Gorra Cuareim"
+            loading="lazy"
+          />
+        </div>
+        <div class="product__body">
+          <h3 class="product__title">Gorra Bordada</h3>
+          <p class="product__desc">Ajustable, logo frontal.</p>
+          <div class="product__footer">
+            <span class="product__price">$ 890</span>
+            <a
+              href="#producto/gorra"
+              class="btn btn--ghost"
+            >
+              Ver producto
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product">
+        <div class="product__media">
+          <img
+            src="tambor.svg"
+            alt="Mini tambor decorativo"
+            loading="lazy"
+          />
+          <span class="badge badge--dark product__badge">Edición limitada</span>
+        </div>
+        <div class="product__body">
+          <h3 class="product__title">Mini Tambor</h3>
+          <p class="product__desc">Hecho a mano — 12&nbsp;cm.</p>
+          <div class="product__footer">
+            <span class="product__price">$ 2.300</span>
+            <a
+              href="#producto/mini-tambor"
+              class="btn btn--ghost"
+            >
+              Ver producto
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product">
+        <div class="product__media">
+          <img
+            src="termo.svg"
+            alt="Termo Cuareim"
+            loading="lazy"
+          />
+        </div>
+        <div class="product__body">
+          <h3 class="product__title">Termo</h3>
+          <p class="product__desc">Termo Stanley edición Cuareim</p>
+          <div class="product__footer">
+            <span class="product__price">$ 2700</span>
+            <a
+              href="#producto/termo"
+              class="btn btn--ghost"
+            >
+              Ver producto
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="section__cta">
+      <a
+        href="#tienda"
+        class="btn btn--primary btn--lg"
+      >
+        Ver tienda completa
+      </a>
     </div>
   </div>
 </section>
